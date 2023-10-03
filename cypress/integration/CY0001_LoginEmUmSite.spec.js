@@ -4,6 +4,7 @@ describe('Cenário 1', function () {
 
     beforeEach(function () {
         cy.visit('https://fragaebitelloteste.azurewebsites.net/admin/login-admin')
+        //Optei por realizar o Login na aplicação de Teste disponibilizada 
     }
     )
 
@@ -16,11 +17,12 @@ describe('Cenário 1', function () {
         cy.get('input[id=password]').type('Teste@Ienh')
         cy.get('button').should('contains.text', 'ENTRAR').click()
 
+        //O erro no console do Cypress é referente a propria aplicação e não do preenchimento
     }
     )
 
     it('Checar a URL', function () {
-        cy.url().should('include', 'admin/painel')
+        cy.url().should('be.equal', 'https://fragaebitelloteste.azurewebsites.net/admin/painel')
     }
     )
 
