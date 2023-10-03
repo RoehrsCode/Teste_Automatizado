@@ -1,1 +1,32 @@
-Teste
+Cenário 1: Login em um Site
+Desenvolva um teste automatizado para a página de login de um site. O teste deve abranger os seguintes passos:
+Abra a página de login.
+Insira um nome de usuário válido.
+Insira uma senha válida.
+Clique no botão de login.
+Verifique se você foi redirecionado com sucesso para a página inicial após o login.
+
+Cenário 2: Busca de Produtos 
+Crie um teste automatizado para a funcionalidade de busca de produtos em um site de compras online. Os passos são os seguintes:
+Abra a página inicial.
+Insira um termo de pesquisa no campo de busca.
+Pressione a tecla "Enter" ou clique no botão de busca.
+Verifique se a página de resultados de pesquisa é exibida corretamente.
+
+Cenário 3: Verificação de Carrinho de Compras
+Desenvolva um teste automatizado para verificar a funcionalidade do carrinho de compras em um site de e-commerce. Os passos são os seguintes:
+Adicione um produto ao carrinho.
+Abra o carrinho de compras.
+Verifique se o produto adicionado está na lista de itens do carrinho.
+Atualize a quantidade do produto para 2.
+Verifique se o subtotal foi atualizado corretamente.
+Remova o produto do carrinho e verifique se o carrinho está vazio.
+
+Cenário 4: Fluxo de Pagamento
+Crie um teste automatizado que simule o fluxo de pagamento em um site de comércio eletrônico. Os passos são os seguintes:
+Selecione um produto e adicione-o ao carrinho.
+Vá para o carrinho de compras.
+Clique no botão "Checkout".
+Preencha os detalhes de entrega e pagamento.
+Confirme a compra.
+Verifique se você foi redirecionado para uma página de confirmação de pedido.
