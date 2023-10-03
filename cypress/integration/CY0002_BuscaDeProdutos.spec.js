@@ -12,7 +12,7 @@ describe('Cenário 2', function () {
     })
 
     it('Preenche dados de Busca & Valida URL', function () {
-        cy.get('input[id=cb1-edit]').type('Vinhos Secos')
+        cy.get('#cb1-edit').type('Vinhos Secos')
         cy.get('body > header > div > div.nav-area.nav-top-area.nav-center-area > form > button > div').click()
         cy.url().should('be.equal', 'https://lista.mercadolivre.com.br/vinhos-secos#D[A:Vinhos%20Secos]')
     }
