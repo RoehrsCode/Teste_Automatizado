@@ -1,6 +1,6 @@
 //<reference types="Cypress"/>
 
-describe('Cenário 3', function () {
+describe('Cenário 4', function () {
 
     it('Navega para o Site', function () {
         cy.visit('https://www.lushme.com.br')
@@ -9,7 +9,7 @@ describe('Cenário 3', function () {
 
     it('Preenche dados e realiza busca', function () {
         const text = 'Bolsa de Palha Vime Casual Beach'
-        cy.get('#product-name').type(text, { delay: 1 })
+        cy.get('#product-name').type(text, { delay: 1000 })
         cy.get('#product-search > span').click()
     }
     )
