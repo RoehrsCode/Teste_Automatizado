@@ -3,34 +3,39 @@
 describe('Cenário 3', function () {
 
     it('Navega para o Site', function () {
-        cy.visit('https://www.amazon.com.br/')
+        cy.visit('https://www.lushme.com.br')
     }
     )
-
-    it('Verifica o título da página', function () {
-        cy.title().should('be.equal', 'Amazon.com.br | Tudo pra você, de A a Z.')
-    })
 
     it('Preenche dados e realiza busca', function () {
-        const text = 'Prato Para Sushi Retangular 11,5x19,5 Preto em Polipropileno Linha Tropical Vem'
-        cy.get('#twotabsearchtextbox').click().type(text, { delay: 0 })
-        cy.get('#nav-search-submit-button').click()
+        const text = 'Bolsa de Palha Vime Casual Beach'
+        cy.get('#product-name').type(text, { delay: 1 })
+        cy.get('#product-search > span').click()
     }
     )
 
-    it('Seleciona Item da Busca', function () {
-        cy.get('#search > div.s-desktop-width-max.s-desktop-content.s-wide-grid-style-t1.s-opposite-dir.s-wide-grid-style.sg-row > div.sg-col-20-of-24.s-matching-dir.sg-col-16-of-20.sg-col.sg-col-8-of-12.sg-col-12-of-16 > div > span.rush-component.s-latency-cf-section > div.s-main-slot.s-result-list.s-search-results.sg-row > div:nth-child(6)').click()
+    it('Seleciona o Produto', function () {
+        cy.get('#app > section.category-content > div > div.flex-holder.container.flex > div.holder-results > div > div.products-list.flex > div:nth-child(1) > a > div.holder-image.relative-tags').click()
     }
     )
 
     it('Adiciona ao Carrinho', function () {
-        cy.get('#add-to-cart-button').click()
+        cy.get('#app > section.main-product-content.container > div.main-product-holder.flex.main_product_content-1 > div.main-product-info > div > div.product-customizations > div > button').click()
     }
     )
 
-    it('Alterar a Quantidade do Produto', function () {
-        cy.get('#sc-item-28da8c66-cde0-4680-84ca-cce5e591c94f > div.a-section.a-spacing-none.ewc-wider-compact-view-only.ewc-item-actions > div.a-row.ewc-qty-and-action-items > div.a-column.a-span8.a-text-center.a-spacing-mini.a-spacing-top-base.quantity-dropdown > span > span > span.a-declarative > span > span > select').select('2')
+    it('Valida Carinho, Altera Quantidade e Valida Preço', function () {
+        const text = 'Bolsa de Palha Vime Casual Beach'
+        cy.get('#section-header > div > div.container.h-left-container > div > div.mini-cart-holder > div > div.navigation-drawer-background > div > div > div > div.side-cart-content > div.side-cart-products-list > div:nth-child(2) > div > div > div.product-cart-box__text--holder-info > div.product-cart-box__text--product-name').contains(text)
+        cy.get('#section-header > div > div.container.h-left-container > div > div.mini-cart-holder > div > div.navigation-drawer-background > div > div > div > div.side-cart-content > div.side-cart-products-list > div:nth-child(2) > div > div > div.product-cart-box__holder-actions > div.quantity-selector.relative > span.quantity-btn.-more > i').click()
+        cy.get('#section-header > div > div.container.h-left-container > div > div.mini-cart-holder > div > div.navigation-drawer-background > div > div > div > div.side-cart-content > div.side-cart-button-container > div.side-cart-total-value.mb-22 > div > span.side-cart-subtotal-after-discounts').contains('R$ 599,98')
     }
     )
-    
+
+    it('Remove do Carinho e Valida', function () {
+        const text = 'Seu carrinho está vazio'
+        cy.get('#section-header > div > div.container.h-left-container > div > div.mini-cart-holder > div > div.navigation-drawer-background > div > div > div > div.side-cart-content > div.side-cart-products-list > div:nth-child(2) > div > div > div.product-cart-box__holder-actions > div.product-cart-box__text--remove').click()
+        cy.get('#section-header > div > div.container.h-left-container > div > div.mini-cart-holder > div > div.navigation-drawer-background > div > div > div > div.empty-cart > div.-title').contains(text)
+    }
+    )
 })
