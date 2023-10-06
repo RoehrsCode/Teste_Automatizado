@@ -30,3 +30,7 @@ Clique no botão "Checkout".
 Preencha os detalhes de entrega e pagamento.
 Confirme a compra.
 Verifique se você foi redirecionado para uma página de confirmação de pedido.
+
+==========================================================================
+Usei um e-commerce, cuidado pros preços/itens estarem OK durante os testes
+==========================================================================
