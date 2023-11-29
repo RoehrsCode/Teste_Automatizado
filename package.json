@@ -8,13 +8,13 @@
   },
   "repository": {
     "type": "git",
-    "url": "RoehrsCode"
+    "url": ""
   },
   "keywords": [
     "Cypress",
     "Js"
   ],
-  "author": "Thiago Roehrs",
+  "author": "Leonardo Gafforelli",
   "license": "ISC",
   "dependencies": {
     "cypress": "^9.7.0"
